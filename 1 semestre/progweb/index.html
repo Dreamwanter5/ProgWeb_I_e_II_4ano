@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/petite-vue" defer></script>
+    <script src="Views/js/login.js" defer></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div v-scope="FormApp">
+        <form @submit.prevent="autenticar">
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" v-model="formData.email">
+            </div>
+            <div>
+                <label for="senha">Senha:</label>
+                <input type="password" v-model="formData.senha">
+            </div>
+            <input type="submit" value="Logar">
+        </form>
+    </div>
+</body>
+
+</html>
