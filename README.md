@@ -1,4 +1,4 @@
-# ProgWeb I e II - 4º Ano
+# ProgWeb I e II
 
 ## 📖 Sobre o Projeto
 
