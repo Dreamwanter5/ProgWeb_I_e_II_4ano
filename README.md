@@ -39,4 +39,4 @@ Este projeto é de caráter educacional e acadêmico.
 
 ---
 
-*Última atualização: 2025*
+*Repositório em atualização contínua*
