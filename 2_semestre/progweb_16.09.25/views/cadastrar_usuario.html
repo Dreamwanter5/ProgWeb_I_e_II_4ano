@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous" />
+
+    <script src="https://unpkg.com/petite-vue" defer></script>
+    <script src="js/cadastrar_usuario.js" defer></script>
+    <!-- <script src="js/cadastro_usuario.js" defer></script> -->
+</head>
+
+<body class="vw-100 vh-100 bg-light">
+    <div class="h-100 container d-flex flex-column justify-content-center" v-scope="app">
+        <h1 class="text-center mb-3">Cadastro de Usuário</h1>
+        <form  method="post" id="formCadastro" @submit.prevent="cadastrar">
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="nome floatingInput" placeholder="Seu nome" v-model="formData.nome" @blur="validarNome" :class="{'is-invalid': errors.nome}" />
+                <label for="floatingInput">Nome</label>
+                <div class="invalid-feedback" id="erroNome">{{errors.nome}}</div>
+                <!-- <div class="valid-feedback">Nome válido!</div> -->
+            </div>
+            <!-- E-mail -->
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="email floatingInput" placeholder="email@google.com"
+                    v-model="formData.email"
+                    @blur="validarEmail"
+                    :class="{'is-invalid': errors.email}" />
+                <label for="floatingInput">Email</label>
+                <div class="invalid-feedback" id="erroEmail">{{errors.email}}</div>
+            </div>
+
+            <!-- Data de nascimento -->
+            <div class="form-floating mb-3">
+                <input type="date" class="form-control" id="data_nascimento floatingInput"
+                    v-model="formData.data_nascimento"
+                    @blur="validarDataNascimento"
+                    :class="{'is-invalid': errors.data_nascimento}" />
+                <label for="floatingInput">Data de Nascimento</label>
+                <div class="invalid-feedback" id="erroDataNascimento">{{errors.data_nascimento}}</div>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="senha floatingInput" @blur="validarSenha" v-model="formData.senha"
+                    :class="{'is-invalid' : errors.senha}" />
+                <label for="floatingInput">Senha</label>
+                <div class="invalid-feedback" id="erroSenha">{{errors.senha}}</div>
+            </div>
+            <div class="form-floating mb-3">
+                <input type="password" class="form-control" id="confirmSenha floatingInput" @blur="validarConfirmacao" v-model="formData.confirmarSenha" 
+                :class="{'is-invalid' : errors.erroConfirmar}" />
+                <label for="floatingInput">Confirmar senha</label>
+                <div class="invalid-feedback" id="erroConfirmar">{{errors.erroConfirmar}}</div>
+            </div>
+            <div class="mb-3 d-flex justify-content-evenly">
+                <a class="btn btn-secondary" href="login_usuario.php" role="button">Login</a>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
